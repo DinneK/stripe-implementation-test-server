@@ -9,8 +9,6 @@ const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY, {
 
 app.use(cors());
 
-// app.set("port", process.env.PORT || 5252);
-
 app.get("/api", (_, res) => {
   res.send("Success");
 });
