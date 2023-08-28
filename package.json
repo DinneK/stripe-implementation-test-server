@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node index.js",
-    "start": "node api/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
     "format": "prettier --write \"**/*.{js,jsx}\""
   },
   "keywords": [],
