@@ -7,16 +7,6 @@ const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY, {
   apiVersion: "2022-08-01",
 });
 
-// const coupon = await stripe.coupons.create({
-//   percent_off: 25,
-//   duration: "once",
-// });
-
-// const promotionCode = await stripe.promotionCodes.create({
-//   coupon: "{{COUPON_ID}}",
-//   code: "VIPCODE",
-// });
-
 app.use(cors());
 
 app.get("/api", (_, res) => {
