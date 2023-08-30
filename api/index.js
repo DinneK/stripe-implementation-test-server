@@ -32,20 +32,8 @@ app.get("/api/config", (_, res) => {
 app.post("/api/create-payment-intent", async (req, res) => {
   try {
     const paymentIntent = await stripe.paymentIntents.create({
-      line_items: [
-        {
-          price_data: {
-            amount: 2000,
-            product_data: {
-              name: "Subscription",
-            },
-            currency: "usd",
-          },
-          quantity: 1,
-        },
-      ],
-      mode: "payment",
-      allow_promotion_codes: true,
+      currency: "usd",
+      amount: 2000,
       automatic_payment_methods: { enabled: true },
     });
 
