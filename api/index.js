@@ -9,7 +9,7 @@ const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY, {
 
 const promoCodeLogic = require("./promoCodeLogic");
 
-app.use(cors());
+app.use(cors({ origin: "https://stripe-implementation-test-fe.vercel.app" }));
 
 app.get("/api", (_, res) => {
   res.send("Success");
