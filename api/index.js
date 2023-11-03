@@ -1,5 +1,6 @@
 const app = require("express")();
 const cors = require("cors");
+var bodyParser = require("body-parser");
 
 require("dotenv").config({ path: "./.env" });
 
@@ -10,6 +11,8 @@ const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY, {
 const promoCodeLogic = require("../promoCodeLogic");
 
 app.use(cors());
+
+app.use(bodyParser.json());
 
 app.get("/api", (_, res) => {
   res.send("Success");
