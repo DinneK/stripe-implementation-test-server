@@ -7,6 +7,8 @@ const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY, {
   apiVersion: "2022-08-01",
 });
 
+const promoCodeLogic = require("./promoCodeLogic");
+
 app.use(cors());
 
 app.get("/api", (_, res) => {
@@ -21,9 +23,12 @@ app.get("/api/config", (_, res) => {
 
 app.post("/api/create-payment-intent", async (req, res) => {
   try {
+    const { promoCode } = req.body;
+    const discountAmount = calculateDiscount(promoCode);
+
     const paymentIntent = await stripe.paymentIntents.create({
       currency: "usd",
-      amount: 2000,
+      amount: 2000 - discountAmount,
       automatic_payment_methods: { enabled: true },
     });
 
