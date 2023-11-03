@@ -1,6 +1,6 @@
 const promoCodeDiscounts = {
   CODE123: 10000,
-  SAVE50: 20000,
+  SAVE200: 20000,
 };
 
 function calculateDiscount(promoCode) {
