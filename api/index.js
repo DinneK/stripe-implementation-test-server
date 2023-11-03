@@ -7,7 +7,7 @@ const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY, {
   apiVersion: "2022-08-01",
 });
 
-const promoCodeLogic = require("./promoCodeLogic");
+const promoCodeLogic = require("../promoCodeLogic");
 
 app.use(cors());
 
