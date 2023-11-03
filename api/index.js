@@ -10,7 +10,7 @@ const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY, {
 const promoCodeLogic = require("./promoCodeLogic");
 
 const corsOptions = {
-  origin: "https://stripe-implementation-test-fe.vercel.app",
+  origin: "https://stripe-implementation-test-server.vercel.app/api/config",
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   preflightContinue: false,
   optionsSuccessStatus: 204,
